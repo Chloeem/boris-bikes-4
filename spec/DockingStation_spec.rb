@@ -1,3 +1,5 @@
+require_relative "../lib/dockinstation.rb"
+
 describe DockingStation do
   #   describe "#release" do
   #   it "should release bikes" do 
