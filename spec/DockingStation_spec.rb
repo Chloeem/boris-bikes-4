@@ -7,7 +7,8 @@ describe DockingStation do
 
   describe "#dock_bike" do
     it { is_expected.to respond_to(:dock_bike).with(1).argument }
-    it "It adds the bike" do
+
+    it "It docks the bike" do
       bike = Bike.new
       subject.dock_bike(bike)
       expect(subject.bike).to eq bike
