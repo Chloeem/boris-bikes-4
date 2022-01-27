@@ -1,4 +1,5 @@
 require_relative '../lib/bike.rb'
+
 describe Bike do
   describe '#working' do
     it "Respond to working method" do
