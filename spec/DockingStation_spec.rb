@@ -1,11 +1,15 @@
 require_relative "../lib/docking_station.rb"
 
 describe DockingStation do
+  describe '#release_bike' do
+    it { is_expected.to respond_to(:release_bike) }
+    end
   
-  it { is_expected.to respond_to(:release_bike) }
-  
+  end
   
 end
+
+
 
 #it { expect(DockingStation.new).to respond_to(:release_bike) }
   #   describe "#release" do
