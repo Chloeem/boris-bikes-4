@@ -7,13 +7,14 @@ class DockingStation
   end
 
   def release_bike
-    fail "No bikes available at this time" unless @bikes
-    @bikes
+    fail "No bikes available at this time" unless @bikes.length > 0
+    @bikes.last
   end
 
   def dock_bike(bike)
     # @bike = bike
-    @bikes << bike 
+    @bikes << bike
+    bike
   end
 
   # def docked?

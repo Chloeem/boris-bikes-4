@@ -23,11 +23,12 @@ describe DockingStation do
     it "It docks the bike" do
       bike = Bike.new
       subject.dock_bike(bike)
-      expect(subject.bike).to eq bike
+      expect(subject.release_bike).to be_truthy
     end
 
     it "Raises an error when the station is at capacity" do
-      
+      subject.dock_bike("bike1")
+      expect { subject.dock_bike("bike2") }.to raise_error("The docking station is at full capacity")
     end
   end
 
