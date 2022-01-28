@@ -2,7 +2,19 @@ require_relative "../lib/docking_station.rb"
 
 describe DockingStation do
   describe '#release_bike' do
-    it { is_expected.to respond_to(:release_bike) }
+    # it { is_expected.to respond_to(:release_bike) }
+
+    it 'releases a bike' do
+      bike = Bike.new
+      subject.dock_bike(bike)
+      expect(subject.release_bike).to eq bike
+    end
+
+    it "Raises an error when no bikes available" do
+      subject.release_bike
+      expect { subject.release_bike }.to raise_error("No bikes available at this time")
+    end
+
   end
 
   describe "#dock_bike" do
@@ -18,12 +30,3 @@ describe DockingStation do
 end
 
 
-
-#it { expect(DockingStation.new).to respond_to(:release_bike) }
-  #   describe "#release" do
-  #   it "should release bikes" do 
-  #       docking_station = DockingStation.new
-  #       expect(docking_station).eq "Release"
-   
-  #   end
-  # end
